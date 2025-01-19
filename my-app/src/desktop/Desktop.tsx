@@ -6,6 +6,8 @@ import { StartMenu } from './StartMenu.tsx';
 import { projects } from '../projects/projects.ts';
 import { Window } from './Window.tsx';
 
+import Draggable from 'react-draggable';
+
 export function Desktop() {
 
     const [displayProjects, setDisplayProjects] = useState<Array<Window>>([]);
@@ -83,6 +85,7 @@ export function Desktop() {
             {
                 displayProjects
             }
+
 
             {
                     /*
