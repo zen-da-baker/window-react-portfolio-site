@@ -6,37 +6,9 @@ import { StartMenu } from './StartMenu.tsx';
 import { projects } from '../projects/projects.ts';
 import { Window } from './Window.tsx';
 
-import Draggable from 'react-draggable';
-
 export function Desktop() {
 
     const [displayProjects, setDisplayProjects] = useState<Array<Window>>([]);
-
-    const [click, setClick] = useState(false);
-
-    const [x, setX] = useState(50);
-    const [y, setY] = useState(50);
-
-    function reposition(event) {
-        
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
-
-        if (click === true) {
-            setX(mouseX);
-            setY(mouseY);
-       }
-    }
-
-    function handleMouseDown() {
-        console.log("down")
-        setClick(true);
-    }
-
-    function handleMouseUp() {
-        console.log("up")
-        setClick(false);
-    }
 
     function displayWindow(projectName: string) {
 
@@ -61,9 +33,10 @@ export function Desktop() {
         console.log(displayProjects[foundIndex])
 
         if (foundIndex > -1) {
-            setDisplayProjects((prevState) => {
-                return prevState.splice(foundIndex, 1);
-            })
+
+            displayProjects.splice(foundIndex, 1);
+
+            setDisplayProjects(displayProjects)
         }
     }
 
@@ -76,7 +49,7 @@ export function Desktop() {
     })
 
     return (
-        <main>
+        <main className="desktop">
             
             {
                 icons
@@ -86,36 +59,6 @@ export function Desktop() {
                 displayProjects
             }
 
-
-            {
-                    /*
-            <div
-                className="window"
-                onMouseDown={handleMouseDown}
-                onMouseUp={handleMouseUp}
-                onMouseMove={(event) => reposition(event)}
-                
-                >
-                <p>https://donovanfrazier.com/projects/valorant-personality-quiz/index.html</p>
-            
-                
-                    <iframe 
-                    id="window-1"
-                    style={{
-                        left: x,
-                        top: y
-                    }}
-                    
-                    className="window" 
-                    src={projects.valorant.localSrc}>
-                    </iframe>
-                    
-            </div>
-            */
-        }
-
-                <p>{x}</p>
-                <p>{y}</p>
 
             <Taskbar />
             <StartMenu />

@@ -1,6 +1,14 @@
 .icon {
-    background-color: hsl(1, 0%, 80%);
+    background-color: hsl(40, 20%, 70%);
     width: 5rem;
     height: 5rem;
     margin: 1rem;
+}
+
+.desktop {
+    background-color: hsl(180, 50%, 80%);
+    position: relative;
+    height: 95vh;
+    margin-top: 0;
+    padding-top: 0;
 }
