@@ -22,11 +22,11 @@ export const projects = {
     radiantSun: {
         name: "Radiant Sun", 
         src: "https://radiantsun.net/",
-        localSrc: "https://radiantsun.net/"
+        localSrc: "public/radiant-sun/index.html"
     },
     quiltsByGinny: {
         name: "Quilts By Ginny", 
         src: "https://quiltsbyginny.com/",
-        localSrc: "https://quiltsbyginny.com/"
+        localSrc: "public/quilts-by-ginny/index.html"
     }
 }

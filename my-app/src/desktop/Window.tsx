@@ -3,8 +3,11 @@ import React from 'react';
 export function Window({project}) {
 
     function hideWindow() {
-        const thisWindow = document.getElementById(project.name)
-        this.style.display = "hidden";
+        const thisWindow = document.getElementById(project.name);
+
+        if (thisWindow !== null) {
+            thisWindow.style.display = "hidden";
+        }
     }
 
     return (
