@@ -8,6 +8,8 @@ import { Window } from './Window.tsx';
 
 export function Desktop() {
 
+    const [displayProjects, setDisplayProjects] = useState<Array<Window>>([]);
+
     const [click, setClick] = useState(false);
 
     const [x, setX] = useState(50);
@@ -34,64 +36,54 @@ export function Desktop() {
         setClick(false);
     }
 
-    function createWindow(source) {
-        const newElement = document.createElement("iframe");
-        
-        newElement.src = source;
-        newElement.style.zIndex = "2";
-        newElement.style.position = "relative";
-        newElement.style.left = "50%";
+    function displayWindow(projectName: string) {
 
-        document.body.insertBefore(newElement, null);
+        const foundIndex: number = projects.findIndex(project => project.name === projectName);
 
-        return newElement;
-    }
+        console.log(projects[foundIndex])
 
-    function displayWindow(id) {
-        const element = document.getElementById(id);
+        if (foundIndex > -1) {
 
-        if (element !== null) {
-            element.style.display = "block";
+            displayProjects.push(<Window project={projects[foundIndex]} closeWindow={closeWindow} />);
+
+            setDisplayProjects(() => {
+                return [displayProjects];
+            })
         }
     }
 
+    function closeWindow(projectName: string) {
+
+        const foundIndex: number = displayProjects.findIndex(project => project.props.project.name === projectName);
+
+        console.log(displayProjects[foundIndex])
+
+        if (foundIndex > -1) {
+            setDisplayProjects((prevState) => {
+                return prevState.splice(foundIndex, 1);
+            })
+        }
+    }
+
+    const icons = projects.map(project => {
+        return (
+            <div className="icon" onClick={() => displayWindow(project.name)}>
+                <p>{project.name}</p>
+            </div>
+        )
+    })
+
     return (
         <main>
-            <h1>Desktop</h1>
+            
+            {
+                icons
+            }
 
-            <div className="icon" onClick={() => displayWindow(projects.valorant.name)}>
-                <p>{projects.valorant.name}</p>
-            </div>
+            {
+                displayProjects
+            }
 
-            <div className="icon" onClick={() => displayWindow(projects.tv.name)}>
-                <p>{projects.tv.name}</p>
-            </div>
-
-            <div className="icon" onClick={() => displayWindow(projects.mathQuiz.name)}>
-                <p>{projects.mathQuiz.name}</p>
-            </div>
-
-            <div className="icon" onClick={() => displayWindow(projects.weather.name)}>
-                <p>{projects.weather.name}</p>
-            </div>
-
-            <div className="icon" onClick={() => displayWindow(projects.radiantSun.name)}>
-                <p>{projects.radiantSun.name}</p>
-            </div>
-
-            <div className="icon" onClick={() => displayWindow(projects.quiltsByGinny.name)}>
-                <p>{projects.quiltsByGinny.name}</p>
-            </div>
-
-            <Window project={projects.tv} />
-
-            <Window project={projects.mathQuiz} />
-
-            <Window project={projects.weather} />
-
-            <Window project={projects.radiantSun} />
-
-            <Window project={projects.quiltsByGinny} />
             {
                     /*
             <div

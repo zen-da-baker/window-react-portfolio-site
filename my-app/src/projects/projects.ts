@@ -1,32 +1,32 @@
-export const projects = {
-    valorant: {
+export const projects = [
+    {
         name: "Valorant Agent Personality Quiz", 
         src: "https://donovanfrazier.com/projects/valorant-personality-quiz/index.html",
-        localSrc: "public/valorant-personality-quiz/index.html"
+        localSrc: "projects/valorant-personality-quiz/index.html"
     },
-    tv: {
+    {
         name: "Retro TV", 
         src: "https://donovanfrazier.com/projects/retro-tv/index.html",
-        localSrc: "public/retro-tv/index.html"
+        localSrc: "projects/retro-tv/index.html"
     },
-    mathQuiz: {
+    {
         name: "Math Quiz", 
         src: "https://donovanfrazier.com/projects/math-quiz/index.html",
-        localSrc: "public/math-quiz/index.html"
+        localSrc: "projects/math-quiz/index.html"
     },
-    weather: {
+    {
         name: "Weather", 
         src: "https://donovanfrazier.com/projects/weather/index.html",
-        localSrc: "public/weather/index.html"
+        localSrc: "projects/weather/index.html"
     },
-    radiantSun: {
+    {
         name: "Radiant Sun", 
         src: "https://radiantsun.net/",
-        localSrc: "public/radiant-sun/index.html"
+        localSrc: "projects/radiant-sun/index.html"
     },
-    quiltsByGinny: {
+    {
         name: "Quilts By Ginny", 
         src: "https://quiltsbyginny.com/",
-        localSrc: "public/quilts-by-ginny/index.html"
+        localSrc: "projects/quilts-by-ginny/index.html"
     }
-}
+]
