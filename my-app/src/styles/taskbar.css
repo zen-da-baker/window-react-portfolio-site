@@ -1,0 +1,7 @@
+.taskbar {
+    position: fixed;
+    width: 100%;
+    background-color: hsl(200, 50%, 80%);
+    bottom: 0;
+    left: 8rem;
+}

@@ -1,0 +1,7 @@
+.startmenu {
+    position: fixed;
+    width: 8rem;
+    bottom: 0;
+    left: 0;
+    background-color: hsl(40, 50%, 80%);
+}
