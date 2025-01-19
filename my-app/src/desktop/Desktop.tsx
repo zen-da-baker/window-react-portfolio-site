@@ -47,31 +47,39 @@ export function Desktop() {
         return newElement;
     }
 
+    function displayWindow(id) {
+        const element = document.getElementById(id);
+
+        if (element !== null) {
+            element.style.display = "block";
+        }
+    }
+
     return (
         <main>
             <h1>Desktop</h1>
 
-            <div className="icon" onClick={() => createWindow("https://donovanfrazier.com/projects/valorant-personality-quiz/index.html")}>
+            <div className="icon" onClick={() => displayWindow(projects.valorant.name)}>
                 <p>{projects.valorant.name}</p>
             </div>
 
-            <div className="icon">
+            <div className="icon" onClick={() => displayWindow(projects.tv.name)}>
                 <p>{projects.tv.name}</p>
             </div>
 
-            <div className="icon">
+            <div className="icon" onClick={() => displayWindow(projects.mathQuiz.name)}>
                 <p>{projects.mathQuiz.name}</p>
             </div>
 
-            <div className="icon">
+            <div className="icon" onClick={() => displayWindow(projects.weather.name)}>
                 <p>{projects.weather.name}</p>
             </div>
 
-            <div className="icon">
+            <div className="icon" onClick={() => displayWindow(projects.radiantSun.name)}>
                 <p>{projects.radiantSun.name}</p>
             </div>
 
-            <div className="icon">
+            <div className="icon" onClick={() => displayWindow(projects.quiltsByGinny.name)}>
                 <p>{projects.quiltsByGinny.name}</p>
             </div>
 

@@ -1,12 +1,12 @@
 import React from 'react';
 
-export function Window({project}) {
+export function Window(project) {
 
     function hideWindow() {
         const thisWindow = document.getElementById(project.name);
 
         if (thisWindow !== null) {
-            thisWindow.style.display = "hidden";
+            thisWindow.style.display = "none";
         }
     }
 

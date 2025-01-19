@@ -1,7 +1,3 @@
-main {
-    position: relative;
-}
-
 .window {
     position: absolute;
     width: 50rem;
@@ -12,7 +8,7 @@ main {
 
     padding-top: 2rem;
 
-    display: hidden;
+    display: none;
 }
 
 .window-iframe {
