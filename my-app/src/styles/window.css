@@ -1,0 +1,7 @@
+.window {
+    position: absolute;
+    width: 50rem;
+    height: 50rem;
+
+    border: 0.5rem solid red;
+}
