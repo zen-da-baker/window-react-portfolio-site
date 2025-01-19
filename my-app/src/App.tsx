@@ -5,6 +5,7 @@ import React from 'react';
 import './styles/taskbar.css';
 import './styles/startmenu.css';
 import './styles/window.css';
+import './styles/desktop.css';
 
 import { Desktop } from './desktop/Desktop.tsx';
 

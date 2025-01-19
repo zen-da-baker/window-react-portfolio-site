@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { Taskbar } from './Taskbar.tsx';
 import { StartMenu } from './StartMenu.tsx';
 
+import { projects } from '../projects/projects.ts';
+import { Window } from './Window.tsx';
+
 export function Desktop() {
 
     const [click, setClick] = useState(false);
@@ -31,10 +34,58 @@ export function Desktop() {
         setClick(false);
     }
 
+    function createWindow(source) {
+        const newElement = document.createElement("iframe");
+        
+        newElement.src = source;
+        newElement.style.zIndex = "2";
+        newElement.style.position = "relative";
+        newElement.style.left = "50%";
+
+        document.body.insertBefore(newElement, null);
+
+        return newElement;
+    }
+
     return (
         <main>
             <h1>Desktop</h1>
-            
+
+            <div className="icon" onClick={() => createWindow("https://donovanfrazier.com/projects/valorant-personality-quiz/index.html")}>
+                <p>{projects.valorant.name}</p>
+            </div>
+
+            <div className="icon">
+                <p>{projects.tv.name}</p>
+            </div>
+
+            <div className="icon">
+                <p>{projects.mathQuiz.name}</p>
+            </div>
+
+            <div className="icon">
+                <p>{projects.weather.name}</p>
+            </div>
+
+            <div className="icon">
+                <p>{projects.radiantSun.name}</p>
+            </div>
+
+            <div className="icon">
+                <p>{projects.quiltsByGinny.name}</p>
+            </div>
+
+            <Window project={projects.tv} />
+
+            <Window project={projects.mathQuiz} />
+
+            <Window project={projects.weather} />
+
+            <Window project={projects.radiantSun} />
+
+            <Window project={projects.quiltsByGinny} />
+            {
+                    /*
             <div
                 className="window"
                 onMouseDown={handleMouseDown}
@@ -44,7 +95,8 @@ export function Desktop() {
                 >
                 <p>https://donovanfrazier.com/projects/valorant-personality-quiz/index.html</p>
             
-                <iframe 
+                
+                    <iframe 
                     id="window-1"
                     style={{
                         left: x,
@@ -52,9 +104,12 @@ export function Desktop() {
                     }}
                     
                     className="window" 
-                    src="https://donovanfrazier.com/projects/valorant-personality-quiz/index.html">
+                    src={projects.valorant.localSrc}>
                     </iframe>
+                    
             </div>
+            */
+        }
 
                 <p>{x}</p>
                 <p>{y}</p>

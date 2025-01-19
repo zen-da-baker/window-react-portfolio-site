@@ -1,7 +1,21 @@
+main {
+    position: relative;
+}
+
 .window {
     position: absolute;
     width: 50rem;
     height: 50rem;
+    background-color: blue;
 
     border: 0.5rem solid red;
+
+    padding-top: 2rem;
+
+    display: hidden;
+}
+
+.window-iframe {
+    width: 100%;
+    height: 100%;
 }
