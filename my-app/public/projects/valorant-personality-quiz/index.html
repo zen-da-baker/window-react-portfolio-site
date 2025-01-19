@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Valorant Agent Personality Quiz</title>
+
+        <!-- CSS -->
+         <link rel="stylesheet" href="styles/agents.css"/>
+         <link rel="stylesheet" href="styles/page.css"/>
+         <link rel="stylesheet" href="styles/responsive.css"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body>
+        <header class="header">
+            <h1>Valorant Agent Personality Quiz</h1>
+            <p>In Windows 98 mode</p>
+        </header>
+
+        <main class="main">
+            <button id="begin" class="btn">Begin</button>
+
+            <!-- Test button -->
+            <!-- <button onclick="console.log('hello')">Hello btn</button> -->
+
+            <!-- Test for if modules successfully modify the page DOM -->
+            <p id="test"></p>
+
+            <!-- Question display test -->
+            <div id="objectTest"></div>
+
+            <!-- Agent information display test -->
+            <!-- <div id="agent-display"></div> -->
+
+            <div id="card" class="card quiz">
+                <header class="header">
+                    <h2 id="question-text"></h2>
+                </header>
+                
+                <button id="choice1" class="btn">${questions[0].text1}</button>   <br/>
+                <button id="choice2" class="btn">${questions[0].text2}</button>   <br/>
+                <button id="choice3" class="btn">${questions[0].text3}</button>   <br/>
+                <button id="choice4" class="btn">${questions[0].text4}</button>   <br/>
+                <button id="choice5" class="btn">${questions[0].text5}</button>   <br/>
+                <button id="choice6" class="btn">${questions[0].text6}</button>   <br/>
+                <button id="choice7" class="btn">${questions[0].text7}</button>   <br/>
+                <button id="choice8" class="btn">${questions[0].text8}</button>   <br/>
+            </div>
+
+            <div id="question-display"></div>
+
+            <div id="display-results">
+                
+                <div class="page-card">
+                    
+                    <header class="header container">
+                        <img class="pfp" id="agent-pfp" alt="Agent profile picture"/>
+
+                        <div id="agent-details">
+                            <h2 id="agent-name" class="description"></h2>
+
+                            <br/>
+
+                            <p id="agent-description" class="description"></p>
+                        </div>
+                    </header>
+
+                    
+
+                    <div class="container">
+                        <div class="card">
+                            <header class="header">
+                                <h3>Likes</h3>
+                            </header>
+                            
+                            <ul class="container">
+                                <li id="agent-like1"></li>
+                                <li id="agent-like2"></li>
+                                <li id="agent-like3"></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="card">
+                            <header class="header">
+                                <h3>Dislikes</h3>
+                            </header>
+                            
+                            <ul class="container">
+                                <li id="agent-dislike1"></li>
+                                <li id="agent-dislike2"></li>
+                                <li id="agent-dislike3"></li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <header class="header">
+                                <h3 id="pair-heading">Your friend group is</h3>
+                            </header>
+                            
+                            <ul class="container">
+                                <li id="agent-pair1"></li>
+                                <li id="agent-pair2"></li>
+                                <li id="agent-pair3"></li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <header class="header">
+                                <h3 id="op-heading">Your ops are</h3>
+                            </header>
+                            
+                            <ul class="container">
+                                <li id="agent-op1"></li>
+                                <li id="agent-op2"></li>
+                                <li id="agent-op3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="reset" class="btn">Play Again</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>
+                The code for this project is available via 
+                <a class="link" href="https://github.com/zen-da-baker/Valorant-Agent-Quiz" target="_blank" rel="noreferrer"> GitHub</a>.
+            </p>
+        </footer>
+
+        <!-- Allows modules to be access by HTML -->
+        <script type="module" src="app.js" defer></script>
+    </body>
+</html>
