@@ -1,5 +1,15 @@
 export const projects = [
     {
+        name: "About",
+        src: "https://donovanfrazier.com/about/about/about.html",
+        localSrc: "about/about/about.html"
+    },
+    {
+        name: "Bio",
+        src: "https://donovanfrazier.com/about/bio/bio.html",
+        localSrc: "about/bio/bio.html"
+    },
+    {
         name: "Valorant Agent Personality Quiz", 
         src: "https://donovanfrazier.com/projects/valorant-personality-quiz/index.html",
         localSrc: "projects/valorant-personality-quiz/index.html"

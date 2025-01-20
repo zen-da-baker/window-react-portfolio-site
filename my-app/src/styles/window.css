@@ -1,17 +1,14 @@
 .window {
     position: absolute;
-    width: 25rem;
-    height: 25rem;
-    background-color: blue;
+    width: 40rem;
+    height: 40rem;
 
-    border: 0.5rem solid red;
-
-    padding-top: 1rem;
+    overflow: hidden;
 }
 
 .window-iframe {
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
 .window-header {

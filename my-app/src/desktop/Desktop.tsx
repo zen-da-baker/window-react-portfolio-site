@@ -14,35 +14,34 @@ export function Desktop() {
 
         const foundIndex: number = projects.findIndex(project => project.name === projectName);
 
-        console.log(projects[foundIndex])
 
         if (foundIndex > -1) {
 
-            displayProjects.push(<Window project={projects[foundIndex]} closeWindow={closeWindow} />);
-
-            setDisplayProjects(() => {
-                return [displayProjects];
+            setDisplayProjects((projectsList) => {
+                return [...projectsList, <Window key={projects[foundIndex].name} project={projects[foundIndex]} closeWindow={closeWindow} />];
             })
         }
     }
 
     function closeWindow(projectName: string) {
 
-        const foundIndex: number = displayProjects.findIndex(project => project.props.project.name === projectName);
+        // const foundIndex: number = displayProjects.findIndex(project => project.props.project.name === projectName);
 
-        console.log(displayProjects[foundIndex])
+        // if (foundIndex > -1) {
 
-        if (foundIndex > -1) {
+        console.log(displayProjects)
 
-            displayProjects.splice(foundIndex, 1);
-
-            setDisplayProjects(displayProjects)
-        }
+            setDisplayProjects(
+                displayProjects.filter((project) => {
+                   return project.key !== projectName;
+                })
+            )
+        // }
     }
 
     const icons = projects.map(project => {
         return (
-            <div className="icon" onClick={() => displayWindow(project.name)}>
+            <div className="icon" key={project.name} onClick={() => displayWindow(project.name)}>
                 <p>{project.name}</p>
             </div>
         )
