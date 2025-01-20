@@ -10,6 +10,11 @@ export const projects = [
         localSrc: "about/bio/bio.html"
     },
     {
+        name: "Resume",
+        src: "https://donovanfrazier.com/resume/resume.pdf",
+        localSrc: "resume/resume.pdf"
+    },
+    {
         name: "Valorant Agent Personality Quiz", 
         src: "https://donovanfrazier.com/projects/valorant-personality-quiz/index.html",
         localSrc: "projects/valorant-personality-quiz/index.html"
