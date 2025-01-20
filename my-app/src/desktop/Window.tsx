@@ -14,7 +14,7 @@ export function Window(props) {
             const currentY = event.clientY;
 
             setX(currentX - 200);
-            setY(currentY - 50);
+            setY(currentY - 35);
         }
     }
 
@@ -36,12 +36,14 @@ export function Window(props) {
                     onMouseDown={click}
                     onMouseUp={release}
                     onMouseMove={drag}>
+
+                    <h2 className="header-text">{props.project.name}</h2>
                     
-                    <a href={props.project.src} target="_blank" rel="noreferrer">
-                        <button>Open in new Tab</button>
+                    <a className="new-tab" href={props.project.src} target="_blank" rel="noreferrer">
+                        <button className="btn">Open in new Tab</button>
                     </a>
                     
-                    <button onClick={() => props.closeWindow(props.project.name)} className="close">X</button>
+                    <button onClick={() => props.closeWindow(props.project.name)} className="close btn">X</button>
                 </header>
                 
                 <iframe src={props.project.localSrc} className="window-iframe" title={props.project.name}></iframe>

@@ -42,7 +42,8 @@ export function Desktop() {
     const icons = projects.map(project => {
         return (
             <div className="icon" key={project.name} onClick={() => displayWindow(project.name)}>
-                <p>{project.name}</p>
+                <img className="icon-img" src="./favicon.ico" alt="Favicon" />
+                <p className="icon-text">{project.name}</p>
             </div>
         )
     })

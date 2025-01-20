@@ -1,6 +1,6 @@
 .window {
     position: absolute;
-    width: 40rem;
+    width: 55rem;
     height: 40rem;
 
     overflow: hidden;
@@ -12,16 +12,33 @@
 }
 
 .window-header {
-    background-color: hsl(1, 0%, 80%);
+    background-color: hsl(1, 0%, 70%);
     height: 3rem;
     margin-top: 0;
     padding: 0;
     margin: 0;
 }
 
+.header-text {
+    position: absolute;
+    margin: 1rem;
+}
+
+.new-tab {
+    position: absolute;
+    right: 5rem;
+    top: 1rem;
+}
+
 .close {
     position: absolute;
-    background-color: hsl(1, 50%, 30%);
+    background-color: hsl(1, 50%, 35%);
+    color: white;
+
+    width: 3rem;
+    height: 3rem;
+
+    font-size: 2rem;
 
     right: 0;
     top: 0;
