@@ -1,8 +1,28 @@
 .taskbar {
     position: fixed;
-    width: 100%;
+    width: 90vw;
     height: 3rem;
     background-color: hsl(220, 50%, 20%);
     bottom: 0;
-    left: 8rem;
+    left: 10vw;
+
+    color: white;
+}
+
+.taskbar-date {
+    position: absolute;
+
+    margin: 0.5rem;
+
+    top: 0rem;
+    right: 0rem;
+}
+
+.taskbar-hours {
+    position: absolute;
+
+    margin: 0.5rem;
+
+    top: 1rem;
+    right: 0rem;
 }
