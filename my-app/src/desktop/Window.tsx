@@ -1,20 +1,34 @@
+// Import React and state management
 import React, { useState } from 'react';
 
 export function Window(props) {
 
+    // Current window position
     const [x, setX] = useState(100);
     const [y, setY] = useState(100);
 
+    // State of dragging
     const [dragging, setDragging] = useState(false);
 
+    // Dragging function with event object
     function drag(event) {
 
-        if (dragging === true) {
-            const currentX = event.clientX;
-            const currentY = event.clientY;
+        // Current mouse position
+        const currentX = event.clientX;
+        const currentY = event.clientY;
 
-            setX(currentX - 200);
-            setY(currentY - 35);
+        // Offset of mouse position against the window position
+        const differenceX = currentX - x;
+        const differenceY = currentY - y;
+
+        // If dragging is true, let the window position update
+        if (dragging === true) {
+
+            console.log("current difference " + differenceX);
+
+            // Set the window position to be the mouse position minus the offset
+            setX(differenceX + x);
+            setY(differenceY + y);
         }
     }
 
