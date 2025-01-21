@@ -51,7 +51,7 @@ export function Window(props) {
                         <button className="btn">Open in new Tab</button>
                     </a>
                     
-                    <button onClick={() => props.closeWindow(props.project.name)} className="close btn">X</button>
+                    <button onClick={props.closeWindow} className="close btn">X</button>
                 </header>
                 
                 <iframe src={props.project.localSrc} className="window-iframe" title={props.project.name}></iframe>

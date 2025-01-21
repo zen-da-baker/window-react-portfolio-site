@@ -25,32 +25,29 @@ export function Desktop() {
 
             // Update the array of windows being displayed
             setDisplayProjects(() => {
-                return [...displayProjects, <Window key={projects[foundIndex].name} project={projects[foundIndex]} closeWindow={closeWindow} />];
+                return [...displayProjects, 
+                    <Window 
+                        index={displayProjects.length} 
+                        key={projects[foundIndex].name} 
+                        project={projects[foundIndex]} 
+                        closeWindow={() => closeWindow(displayProjects.length)} 
+                    />];
             })
         }
     }
 
     // Function for closing the window
-    function closeWindow(projectName: string) {
+    function closeWindow(targetIndex: number) {
 
-        console.log(displayProjects[0]);
-        console.log(projectName)
+        // const newArr = displayProjects.filter((window) => window.props.index !== targetIndex);
 
-        const foundIndex: number = displayProjects.findIndex(window => window.key === projectName);
+        const newArr = [...displayProjects];
 
-        console.log(foundIndex)
+        newArr.splice(targetIndex, 1);
 
-        // if (foundIndex > -1) {
-
-        console.log(displayProjects)
-
-        const newArr = displayProjects.filter(window => window.props.project.name !== projectName);
-
-            // newArr.splice(foundIndex, 1);
-
-            // Removing a window from the display of windows
-                setDisplayProjects(newArr)
-        // }
+        // Removing a window from the display of windows
+        setDisplayProjects(newArr);
+        
     }
 
     // Creates and array of icons 
@@ -73,6 +70,8 @@ export function Desktop() {
             {
                 displayProjects.map(item => item)
             }
+
+            <p>Active Windows {displayProjects.length}</p>
 
 
             <Taskbar />
