@@ -15,6 +15,11 @@ export const projects = [
         localSrc: "resume/resume.pdf"
     },
     {
+        name: "Budget",
+        src: "https://budget-by-coding-cacti-frontend.onrender.com/",
+        localSrc: "projects/budget/index.html"
+    },
+    {
         name: "Valorant Agent Personality Quiz", 
         src: "https://donovanfrazier.com/projects/valorant-personality-quiz/index.html",
         localSrc: "projects/valorant-personality-quiz/index.html"
