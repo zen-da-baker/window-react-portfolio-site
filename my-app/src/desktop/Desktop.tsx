@@ -1,44 +1,59 @@
+// Import React and state management
 import React, { useState } from 'react';
 
+// Import taskbar and start menu
 import { Taskbar } from './Taskbar.tsx';
 import { StartMenu } from './StartMenu.tsx';
 
+// Import projects array and windows
 import { projects } from '../projects/projects.ts';
 import { Window } from './Window.tsx';
 
 export function Desktop() {
 
-    const [displayProjects, setDisplayProjects] = useState<Array<Window>>([]);
+    // Displays array in state management
+    const [displayProjects, setDisplayProjects] = useState<Array<React.JSX.Element>>([]);
 
+    // Function for adding a window to the display based on the icon pressed
     function displayWindow(projectName: string) {
 
+        // Find the exact project based on the icon selected
         const foundIndex: number = projects.findIndex(project => project.name === projectName);
 
-
+        // If the icon leads to an existing project, add the project to the display of windows 
         if (foundIndex > -1) {
 
-            setDisplayProjects((projectsList) => {
-                return [...projectsList, <Window key={projects[foundIndex].name} project={projects[foundIndex]} closeWindow={closeWindow} />];
+            // Update the array of windows being displayed
+            setDisplayProjects(() => {
+                return [...displayProjects, <Window key={projects[foundIndex].name} project={projects[foundIndex]} closeWindow={closeWindow} />];
             })
         }
     }
 
+    // Function for closing the window
     function closeWindow(projectName: string) {
 
-        // const foundIndex: number = displayProjects.findIndex(project => project.props.project.name === projectName);
+        console.log(displayProjects[0]);
+        console.log(projectName)
+
+        const foundIndex: number = displayProjects.findIndex(window => window.key === projectName);
+
+        console.log(foundIndex)
 
         // if (foundIndex > -1) {
 
         console.log(displayProjects)
 
-            setDisplayProjects(
-                displayProjects.filter((project) => {
-                   return project.key !== projectName;
-                })
-            )
+        const newArr = displayProjects.filter(window => window.props.project.name !== projectName);
+
+            // newArr.splice(foundIndex, 1);
+
+            // Removing a window from the display of windows
+                setDisplayProjects(newArr)
         // }
     }
 
+    // Creates and array of icons 
     const icons = projects.map(project => {
         return (
             <div className="icon" key={project.name} onClick={() => displayWindow(project.name)}>
@@ -56,7 +71,7 @@ export function Desktop() {
             }
 
             {
-                displayProjects
+                displayProjects.map(item => item)
             }
 
 

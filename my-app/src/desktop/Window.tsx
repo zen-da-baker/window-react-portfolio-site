@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 export function Window(props) {
 
     // Current window position
-    const [x, setX] = useState<number>(100);
-    const [y, setY] = useState<number>(100);
+    const [x, setX] = useState<number>(50);
+    const [y, setY] = useState<number>(50);
 
     // State of dragging
     const [dragging, setDragging] = useState(false);
@@ -14,12 +14,8 @@ export function Window(props) {
     // Dragging function with event object
     function drag(event) {
 
-    
-
         // If dragging is true, let the window position update
         if (dragging === true) {
-
-            // console.log("current difference " + differenceX);
 
             // Set the window position to be the mouse position minus the offset
             setX(event.movementX + x);
@@ -28,10 +24,12 @@ export function Window(props) {
         
     }
 
+    // Activate dragging
     function click() {
         setDragging(true);
     }
 
+    // Deactivate dragging
     function release() {
         setDragging(false);
     }
