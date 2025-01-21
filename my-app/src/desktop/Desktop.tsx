@@ -30,24 +30,16 @@ export function Desktop() {
                         index={displayProjects.length} 
                         key={projects[foundIndex].name} 
                         project={projects[foundIndex]} 
-                        closeWindow={() => closeWindow(displayProjects.length)} 
+                        closeWindow={() => {
+
+                            // Filter the list of windows based on the previous state
+                            setDisplayProjects(prevState => {
+                                return prevState.filter(window => window.key !== projects[foundIndex].name)
+                            })
+                        }} 
                     />];
             })
         }
-    }
-
-    // Function for closing the window
-    function closeWindow(targetIndex: number) {
-
-        // const newArr = displayProjects.filter((window) => window.props.index !== targetIndex);
-
-        const newArr = [...displayProjects];
-
-        newArr.splice(targetIndex, 1);
-
-        // Removing a window from the display of windows
-        setDisplayProjects(newArr);
-        
     }
 
     // Creates and array of icons 
