@@ -6,6 +6,7 @@ export function Window(props) {
     // Current window position
     const [x, setX] = useState<number>(50);
     const [y, setY] = useState<number>(50);
+    const [z, setZ] = useState<number>(1);
 
     // State of dragging
     const [dragging, setDragging] = useState(false);
@@ -27,6 +28,7 @@ export function Window(props) {
     // Activate dragging
     function click() {
         setDragging(true);
+        setZ(prevState => prevState + 1);
     }
 
     // Deactivate dragging
@@ -36,7 +38,7 @@ export function Window(props) {
     
 
     return (
-            <div className="window" id={props.project.name} style={{left: x, top: y}}>
+            <div className="window" id={props.project.name} style={{left: x, top: y, zIndex: z}}>
                 
                 <header
                     className="window-header"

@@ -68,7 +68,7 @@ export function Desktop() {
             }
 
             {
-                displayProjects.map(item => item)
+                displayProjects
             }
 
             <p>Active Windows {displayProjects.length}</p>
