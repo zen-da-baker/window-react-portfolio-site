@@ -63,8 +63,6 @@ export function Desktop() {
                 displayProjects
             }
 
-            <p>Active Windows {displayProjects.length}</p>
-
 
             <Taskbar />
             <StartMenu />

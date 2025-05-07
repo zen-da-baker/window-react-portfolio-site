@@ -16,8 +16,9 @@ export const projects = [
     },
     {
         name: "Budget",
-        src: "https://budget-by-coding-cacti-frontend.onrender.com/",
-        localSrc: "projects/budget/index.html"
+        src: "https://budgetgarden.net",
+        // localSrc: "projects/budget/index.html"
+        localSrc: "https://budgetgarden.net"
     },
     {
         name: "Valorant Agent Personality Quiz", 
