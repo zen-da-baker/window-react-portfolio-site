@@ -56,7 +56,7 @@ export function Window(props) {
                     <button onClick={props.closeWindow} className="close btn">X</button>
                 </header>
                 
-                <iframe src={props.project.localSrc} className="window-iframe" title={props.project.name}></iframe>
+                <iframe src={props.project.src} className="window-iframe" title={props.project.name}></iframe>
             </div>
     )
 }
